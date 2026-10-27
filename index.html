@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banajit Rajbongshi | AI/ML Researcher & Physicist</title>
+    <title>Banajit Rajbongshi | AI/ML Researcher & Physicist - Portfolio</title>
+    <meta name="description"
+        content="Official portfolio of Banajit Rajbongshi, an AI/ML Researcher and Physicist specializing in dynamical systems and spatiotemporal prediction of Quantum phenomena.">
+    <meta name="keywords"
+        content="Banajit Rajbongshi, AI Researcher, ML Researcher, Physicist, Machine Learning Portfolio, Quantum Physics, Reservoir Computing, Varanasi Researcher">
+    <meta name="author" content="Banajit Rajbongshi">
+    <link rel="canonical" href="https://yourdomain.com"> <!-- Update this with your actual URL -->
+
+    <!-- OPEN GRAPH / FACEBOOK / LINKEDIN -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:title" content="Banajit Rajbongshi | AI/ML Researcher & Physicist">
+    <meta property="og:description"
+        content="Decoding dynamical systems for spatiotemporal prediction of Quantum phenomena using advanced AI/ML architectures.">
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+
+    <!-- TWITTER -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Banajit Rajbongshi | AI/ML Researcher">
+    <meta property="twitter:description" content="Bridging the gap between Physics and Neural Architectures.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Banajit Rajbongshi",
+      "jobTitle": "AI/ML Researcher & Physicist",
+      "url": "https://banajitrajbongshi.netlify.app/",
+      "sameAs": [
+        "https://github.com/Benz404",
+        "https://www.linkedin.com/in/banajit-rajbongshi-bb0876240/",
+        "https://medium.com/@banajitraj007"
+      ],
+      "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Quantum Physics", "Dynamical Systems", "Astronomy"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Varanasi",
+        "addressCountry": "India"
+      }
+    }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e8f0;
+            margin: 0;
+            overflow-x: hidden;
+            letter-spacing: 0.05em;
+        }
+
+        p,
+        .body-text {
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.02em;
+        }
+
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #333;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #34d399, #14b8a6, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #10b981;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        #neural-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .modal-overlay {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(15px);
+        }
+
+        .project-card {
+            background: #111;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .project-card:hover {
+            background: #161616;
+            border-color: rgba(16, 185, 129, 0.3);
+            transform: translateY(-5px);
+        }
+
+        /* --- AI MODEL CARD STYLES --- */
+        .model-card {
+            position: relative;
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid rgba(16, 185, 129, 0.1);
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .model-card::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(16, 185, 129, 0.05), transparent);
+            animation: scan 4s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            0% {
+                top: -100%;
+            }
+
+            100% {
+                top: 100%;
+            }
+        }
+
+        .node-pulse {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                filter: blur(2px);
+            }
+
+            50% {
+                opacity: 1;
+                filter: blur(0px);
+            }
+        }
+
+        .circuit-bg {
+            background-image: radial-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .processing-bar {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .processing-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: progress-shine 2s infinite;
+        }
+
+        @keyframes progress-shine {
+            100% {
+                left: 100%;
+            }
+        }
+
+        .lab-panel {
+            background: rgba(16, 185, 129, 0.03);
+            border: 1px solid rgba(16, 185, 129, 0.1);
+        }
+
+        /* Scientific Illustration Container */
+        .illustration-container {
+            filter: drop-shadow(0 0 30px rgba(16, 185, 129, 0.2));
+        }
+    </style>
+</head>
+
+<body class="selection:bg-emerald-500/30 antialiased">
+
+    <!-- Modal System -->
+    <div id="project-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="modal-overlay absolute inset-0" onclick="closeModal()"></div>
+        <div class="relative bg-[#0d0d0d] border border-white/10 w-full max-w-2xl rounded-[2.5rem] p-8 md:p-12 shadow-2xl scale-95 opacity-0 transition-all duration-300"
+            id="modal-content">
+            <button onclick="closeModal()"
+                class="absolute top-8 right-8 text-slate-500 hover:text-white transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div id="modal-body">
+                <!-- Content Injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 glass-nav px-6 py-5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-9 h-9 rounded-lg bg-emerald-500 flex items-center justify-center font-black text-black text-lg">
+                    >_</div>
+                <span class="text-xl font-black tracking-tighter text-white uppercase">
+                    BANAJIT RAJBONGSHI<span class="text-emerald-500"></span>
+                </span>
+            </div>
+            <div class="hidden md:flex gap-10 text-[10px] font-bold tracking-[0.3em] uppercase text-slate-400">
+                <a href="#about" class="nav-link hover:text-emerald-400">About</a>
+                <a href="#research" class="nav-link hover:text-emerald-400">Research</a>
+                <a href="#skills" class="nav-link hover:text-emerald-400">Skills</a>
+                <a href="#contact" class="nav-link hover:text-emerald-400">Contact</a>
+            </div>
+            <a href="./MY_CV.pdf" target="_blank"
+                class="px-6 py-2 border border-white/10 hover:border-emerald-500/50 text-[10px] font-black uppercase tracking-widest rounded-full transition-all">
+                RESUME
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-24 px-6 overflow-hidden">
+        <canvas id="neural-canvas"></canvas>
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center z-10">
+            <div id="hero-content">
+                <div
+                    class="hero-text inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/5 border border-emerald-500/10 text-emerald-400 text-[10px] font-black uppercase tracking-widest mb-8">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    VARANASI, INDIA • UTC+5:30
+                </div>
+                <h1
+                    class="hero-text text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8 text-white uppercase">
+                    AI / ML <br />
+                    <span class="text-gradient">Researcher</span>
+                </h1>
+                <p class="hero-text text-lg md:text-xl text-slate-400 max-w-lg mb-10 leading-relaxed font-medium">
+                    Decoding dynamical systems for spatiotemporal prediction of Quantum phenomena.
+                </p>
+                <div class="hero-text mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl">
+                    <div
+                        class="p-6 rounded-2xl bg-emerald-500/5 border border-emerald-500/10 backdrop-blur-sm relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-emerald-500"></div>
+                        <div class="text-[9px] font-black text-emerald-500/50 uppercase tracking-[0.3em] mb-2">System
+                            Time // UTC+5:30</div>
+                        <div id="digital-clock"
+                            class="text-4xl font-black text-white tracking-tighter uppercase tabular-nums">00:00:00
+                        </div>
+                        <div class="text-[9px] font-bold text-slate-500 mt-2 uppercase tracking-widest">Location:
+                            Varanasi, India</div>
+                    </div>
+
+                    <div
+                        class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm relative overflow-hidden">
+                        <div class="text-[9px] font-black text-slate-500 uppercase tracking-[0.3em] mb-2">Neural Status
+                        </div>
+                        <div id="init-text"
+                            class="text-[10px] font-mono text-emerald-400 leading-tight h-12 overflow-hidden"></div>
+                        <div class="mt-3 w-full h-[1px] bg-white/10 overflow-hidden">
+                            <div id="init-bar" class="h-full bg-emerald-500 w-0"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- --- ADVANCED SCIENTIFIC ILLUSTRATION --- -->
+            <div class="hidden lg:block relative reveal opacity-0 illustration-container">
+                <svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    id="hero-illustration">
+                    <!-- Central Quantum Nucleus -->
+                    <circle id="core-nucleus" cx="250" cy="250" r="40" fill="url(#grad-core)" filter="url(#glow)" />
+
+                    <!-- Atomic Orbital Shells (AI Layers) -->
+                    <ellipse id="ring-1" cx="250" cy="250" rx="100" ry="180" stroke="rgba(16, 185, 129, 0.3)"
+                        stroke-width="1" transform="rotate(45 250 250)" />
+                    <ellipse id="ring-2" cx="250" cy="250" rx="100" ry="180" stroke="rgba(37, 99, 235, 0.3)"
+                        stroke-width="1" transform="rotate(-45 250 250)" />
+                    <ellipse id="ring-3" cx="250" cy="250" rx="100" ry="220" stroke="rgba(20, 184, 166, 0.2)"
+                        stroke-width="1" />
+
+                    <!-- Neural Network Synapses (Floating Nodes) -->
+                    <g id="neural-nodes">
+                        <circle class="synapse" cx="180" cy="150" r="4" fill="#10b981" />
+                        <circle class="synapse" cx="320" cy="120" r="4" fill="#3b82f6" />
+                        <circle class="synapse" cx="380" cy="280" r="4" fill="#10b981" />
+                        <circle class="synapse" cx="150" cy="350" r="4" fill="#3b82f6" />
+                        <circle class="synapse" cx="250" cy="50" r="4" fill="#10b981" />
+                    </g>
+
+                    <!-- Connection Lines -->
+                    <path id="connection-line" d="M180 150 L250 250 L320 120 M380 280 L250 250 L150 350"
+                        stroke="rgba(16, 185, 129, 0.1)" stroke-width="0.5" />
+
+                    <defs>
+                        <radialGradient id="grad-core" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                            gradientTransform="translate(250 250) rotate(90) scale(40)">
+                            <stop stop-color="#10b981" />
+                            <stop offset="1" stop-color="#064e3b" stop-opacity="0" />
+                        </radialGradient>
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <stop offset="0" stop-color="white" stop-opacity="1" />
+                            <feGaussianBlur stdDeviation="15" result="blur" />
+                        </filter>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 px-6 bg-[#080808]">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-5 reveal opacity-0 relative">
+                    <div
+                        class="relative z-10 w-full aspect-square rounded-[3rem] overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition-all duration-700">
+                        <img src="./myphoto.jpg" alt="Banajit Rajbongshi" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-emerald-500/50 rounded-tl-[2rem]">
+                    </div>
+                    <div
+                        class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-blue-500/50 rounded-br-[2rem]">
+                    </div>
+                </div>
+                <div class="lg:col-span-7 reveal opacity-0 space-y-8">
+                    <h2 class="text-[10px] font-black uppercase tracking-[0.4em] text-emerald-500 mb-6">Theoretical
+                        Foundation</h2>
+                    <h3 class="text-4xl md:text-5xl font-black text-white tracking-tight leading-tight uppercase">
+                        Synthesizing Physics with Neural Architectures.
+                    </h3>
+                    <div class="space-y-6 text-lg text-slate-400 leading-relaxed body-text">
+                        <p>
+                            I'm an ML enthusiast, budding physicist, and web developer.
+                        </p>
+                        <p>
+                            My first experience with code was during my early days of exploring technology. I remember
+                            the excitement of trying to solve complex problems and the satisfaction of seeing my code
+                            come to life. The thrill of understanding and building intricate systems was captivating,
+                            much like piecing together a puzzle. Each line of code was a step closer to creating
+                            something meaningful, much like constructing a masterpiece from individual blocks.
+                        </p>
+                        <p>
+                            Here's to building new frontiers with code and discovery!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Scientific Portfolio Section -->
+    <section id="research" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="reveal opacity-0 flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+                <div class="max-w-xl">
+                    <h2 class="text-[10px] font-black uppercase tracking-[0.4em] text-emerald-500 mb-6">Empirical
+                        Evidence</h2>
+                    <h3 class="text-5xl font-black text-white tracking-tighter uppercase">Scientific Portfolio</h3>
+                </div>
+                <div id="filter-tabs" class="flex gap-1 bg-white/5 p-1.5 rounded-2xl border border-white/5 self-start">
+                    <button onclick="filterProjects('All')"
+                        class="tab-btn active px-6 py-3 text-[10px] font-black uppercase tracking-widest rounded-xl transition-all bg-emerald-500 text-black">All</button>
+                    <button onclick="filterProjects('Astronomy')"
+                        class="tab-btn px-6 py-3 text-[10px] font-black uppercase tracking-widest rounded-xl transition-all text-slate-500 hover:text-white">Astronomy</button>
+                    <button onclick="filterProjects('Machine Learning')"
+                        class="tab-btn px-6 py-3 text-[10px] font-black uppercase tracking-widest rounded-xl transition-all text-slate-500 hover:text-white">Machine
+                        Learning</button>
+                </div>
+            </div>
+
+            <div id="projects-grid" class="grid md:grid-cols-2 gap-6">
+                <!-- Projects injected via script -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-32 px-6 bg-[#080808]">
+        <div class="max-w-7xl mx-auto">
+            <div class="reveal opacity-0 text-center mb-24">
+                <h2 class="text-[10px] font-black uppercase tracking-[0.4em] text-emerald-500 mb-6">Methodology</h2>
+                <h3 class="text-5xl font-black text-white tracking-tighter uppercase">The Technical Taxonomy</h3>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-6" id="skills-grid">
+                <!-- Advanced AI Skills Cards injected via script -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="pt-32 pb-16 px-6 bg-black relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10 text-center">
+            <div class="reveal opacity-0 mb-24">
+                <h2 class="text-[10px] font-black uppercase tracking-[0.4em] text-emerald-500 mb-8">Collaborate</h2>
+                <h3 class="text-6xl md:text-8xl font-black text-white tracking-tighter mb-12 leading-none uppercase">
+                    Inquire <br /> For Impact.
+                </h3>
+                <a href="mailto:banajitraj007@gmail.com"
+                    class="text-xl md:text-4xl text-emerald-400 font-black hover:text-white transition-colors underline underline-offset-[12px] uppercase tracking-tighter">banajitraj007@gmail.com</a>
+
+                <div class="flex justify-center gap-6 mt-16">
+                    <a href="https://medium.com/@banajitraj007" target="_blank"
+                        class="p-4 bg-white/5 rounded-2xl text-slate-500 hover:text-emerald-400 hover:bg-emerald-500/5 border border-white/5 hover:border-emerald-500/20 transition-all">
+                        <i data-lucide="pen-tool" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://www.instagram.com/the_vinci_terminal/" target="_blank"
+                        class="p-4 bg-white/5 rounded-2xl text-slate-500 hover:text-emerald-400 hover:bg-emerald-500/5 border border-white/5 hover:border-emerald-500/20 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <circle cx="12" cy="12" r="4" />
+                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/Benz404" target="_blank"
+                        class="p-4 bg-white/5 rounded-2xl text-slate-500 hover:text-emerald-400 hover:bg-emerald-500/5 border border-white/5 hover:border-emerald-500/20 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <title>Banajit Rajbongshi | AI/ML Researcher & Physicist - Portfolio</title>
+            <meta name="description"
+                content="Official portfolio of Banajit Rajbongshi, an AI/ML Researcher and Physicist specializing in dynamical systems and spatiotemporal prediction of Quantum phenomena.">
+            <meta name="keywords"
+                content="Banajit Rajbongshi, AI Researcher, ML Researcher, Physicist, Machine Learning Portfolio, Quantum Physics, Reservoir Computing, Varanasi Researcher">
+            <meta name="author" content="Banajit Rajbongshi">
+            <link rel="canonical" href="https://yourdomain.com"> <!-- Update this with your actual URL -->
+
+            <!-- OPEN GRAPH / FACEBOOK / LINKEDIN -->
+            <meta property="og:type" content="website">
+            <meta property="og:url" content="https://banajitrajbongshi.netlify.app">
+            <meta property="og:title" content="Banajit Rajbongshi | AI/ML Researcher & Physicist">
+            <meta property="og:description"
+                content="Decoding dynamical systems for spatiotemporal prediction of Quantum phenomena using advanced AI/ML architectures.">
+            <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+
+            <!-- TWITTER -->
+            <meta property="twitter:card" content="summary_large_image">
+            <meta property="twitter:title" content="Banajit Rajbongshi | AI/ML Researcher">
+            <meta property="twitter:description" content="Bridging the gap between Physics and Neural Architectures.">
+            <div
+                class="reveal opacity-0 flex flex-col md:flex-row justify-between items-center pt-16 border-t border-white/5 gap-8">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-6 h-6 rounded bg-emerald-500 flex items-center justify-center font-black text-black text-[10px]">
+                        >_</div>
+                    <span class="text-xs font-black tracking-widest text-white uppercase">Banajit Rajbongshi</span>
+                </div>
+                <p class="text-[10px] text-slate-600 font-black uppercase tracking-[0.2em]">
+                    © 2024 • Physicist / AI Researcher
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.enterLaboratory = () => {
+            gsap.to(window, { duration: 1.5, scrollTo: "#lab-dashboard", ease: "power4.inOut" });
+            gsap.to("#neural-canvas", { opacity: 0.8, duration: 0.5, yoyo: true, repeat: 1 });
+        };
+
+        const projectData = [
+            {
+                title: "Reservoir Computing: Coupled Systems",
+                category: "Machine Learning",
+                description: "Analyzing synchronization and complexity in coupled dynamical systems via RC.",
+                overview: "Explores the emergence of synchronization in high-dimensional coupled systems using Reservoir Computing.",
+                link: "https://github.com/Benz404",
+                linkText: "Github Link",
+                tags: ["Coupled Systems", "RC", "Chaos"],
+                icon: "layers"
+            },
+            {
+                title: "Visualizing the Invisible: Quantum Atom",
+                category: "Machine Learning",
+                description: "Computational rendering of atomic probability densities using predictive ML models.",
+                overview: "A visualization pipeline translating wavefunctions into spatiotemporal visual representations.",
+                link: "https://github.com/Benz404",
+                linkText: "Github Link",
+                tags: ["Visualization", "Quantum", "ML"],
+                icon: "eye"
+            },
+            {
+                title: "Amateur Radio Telescope Assembly",
+                category: "Astronomy",
+                description: "Small-scale radio telescope assembly to study Ku-band radiation (12-18 GHz).",
+                overview: "Engineering an off-set parabolic dish into a functional radio telescope mounted on an equatorial mount.",
+                link: "https://drive.google.com/file/d/11HgujidjoEFdr-ACI4aX4I3QgV_bUHSn/view",
+                linkText: "Report Link",
+                tags: ["RF", "Hardware", "Ku-Band"],
+                icon: "radio"
+            },
+            {
+                title: "Astronomical Object Classifier: SDSS",
+                category: "Machine Learning",
+                description: "Automated classification of Stars, Galaxies, and Quasars via Random Forest.",
+                overview: "An ML pipeline categorization accuracy of 98% based on SDSS photometric magnitudes.",
+                link: "https://github.com/Benz404",
+                linkText: "Github Link",
+                tags: ["SDSS", "Random Forest", "AstroML"],
+                icon: "binary"
+            },
+            {
+                title: "ML-Powered Snake Implementation",
+                category: "Machine Learning",
+                description: "Classic game dynamics controlled by reinforcement learning and AI logic.",
+                overview: "Agent trained via deep Q-learning to optimize scores and avoid self-collision.",
+                link: "https://github.com/Benz404/Snake-game-AI",
+                linkText: "Github Link",
+                tags: ["AI", "RL", "Python"],
+                icon: "brain-circuit"
+            },
+            {
+                title: "Asteroid Search Campaign (IASC)",
+                category: "Astronomy",
+                description: "Preliminary detection of asteroids P21L87C and P21L87X in the Indian Sky.",
+                overview: "Collaborative identification of asteroid candidates via astrometric data analysis.",
+                link: "https://medium.com/@banajitraj007/preliminary-detection-of-asteroids-in-the-indian-sky-in-the-international-asteroid-search-8daf8e113c70",
+                linkText: "Report Link",
+                tags: ["Astrometry", "IASC", "Discovery"],
+                icon: "telescope"
+            },
+            {
+                title: "Quantum ESN Breathing",
+                category: "Machine Learning",
+                description: "Predicting the spatiotemporal evolution of quantum states using ESNs.",
+                overview: "Treats neural networks as high-dimensional reservoirs to model the oscillation of quantum states.",
+                link: "https://github.com/Benz404",
+                linkText: "Github Link",
+                tags: ["ESN", "Quantum Breath", "Dynamics"],
+                icon: "atom"
+            }
+        ];
+
+        const skillData = [
+            { title: "Inference Engine", skills: ["TensorFlow", "PyTorch", "ESNs", "Scikit-Learn"] },
+            { title: "Physical Layers", skills: ["Electronics", "Quantum Mechanics", "Numerical Analysis", "Astrometry"] },
+            { title: "Logic & Development", skills: ["Python", "C++", "Assembly (8085)", "LaTeX"] }
+        ];
+
+        function initNeuralNet() {
+            const canvas = document.getElementById('neural-canvas');
+            const ctx = canvas.getContext('2d');
+            let nodes = [];
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+            window.addEventListener('resize', resize);
+            resize();
+            class Node {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.4;
+                    this.vy = (Math.random() - 0.5) * 0.4;
+                }
+                update() {
+                    this.x += this.vx; this.y += this.vy;
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                }
+            }
+            for (let i = 0; i < 45; i++) nodes.push(new Node());
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.strokeStyle = 'rgba(16, 185, 129, 0.15)';
+                nodes.forEach((n, i) => {
+                    n.update();
+                    ctx.beginPath(); ctx.arc(n.x, n.y, 1.5, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(16, 185, 129, 0.4)'; ctx.fill();
+                    for (let j = i + 1; j < nodes.length; j++) {
+                        const n2 = nodes[j]; const d = Math.hypot(n.x - n2.x, n.y - n2.y);
+                        if (d < 160) { ctx.beginPath(); ctx.moveTo(n.x, n.y); ctx.lineTo(n2.x, n2.y); ctx.stroke(); }
+                    }
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        // Hero Illustration Animation
+        function animateHeroIllustration() {
+            gsap.to("#ring-1", { rotation: 360, duration: 20, repeat: -1, ease: "none", transformOrigin: "center" });
+            gsap.to("#ring-2", { rotation: -360, duration: 15, repeat: -1, ease: "none", transformOrigin: "center" });
+            gsap.to("#ring-3", { rotation: 360, duration: 25, repeat: -1, ease: "none", transformOrigin: "center" });
+
+            gsap.to("#core-nucleus", { scale: 1.1, duration: 2, repeat: -1, yoyo: true, ease: "sine.inOut" });
+
+            gsap.to(".synapse", {
+                x: "random(-10, 10)",
+                y: "random(-10, 10)",
+                duration: "random(2, 4)",
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                stagger: 0.2
+            });
+
+            gsap.to("#connection-line", {
+                strokeOpacity: 0.4,
+                duration: 0.5,
+                repeat: -1,
+                yoyo: true,
+                ease: "steps(4)"
+            });
+        }
+
+        window.openModal = (index) => {
+            const p = projectData[index];
+            const modal = document.getElementById('project-modal');
+            const content = document.getElementById('modal-content');
+            document.getElementById('modal-body').innerHTML = `
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="p-4 bg-emerald-500/10 rounded-2xl text-emerald-400">
+                        <i data-lucide="${p.icon}" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-500 mb-1">${p.category}</h4>
+                        <h3 class="text-3xl font-black text-white uppercase">${p.title}</h3>
+                    </div>
+                </div>
+                <p class="text-slate-400 text-lg leading-relaxed mb-8 body-text font-medium">${p.overview}</p>
+                <div class="flex gap-4">
+                    <a href="${p.link}" target="_blank" class="flex-1 flex items-center justify-center gap-3 py-4 bg-white text-black font-black uppercase text-[10px] tracking-widest rounded-xl hover:bg-emerald-400 transition-all">
+                        <i data-lucide="external-link" class="w-4 h-4"></i> ${p.linkText}
+                    </a>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+            setTimeout(() => { content.classList.remove('scale-95', 'opacity-0'); content.classList.add('scale-100', 'opacity-100'); }, 10);
+            lucide.createIcons();
+        };
+
+        window.closeModal = () => {
+            const modal = document.getElementById('project-modal');
+            const content = document.getElementById('modal-content');
+            content.classList.add('scale-95', 'opacity-0'); content.classList.remove('scale-100', 'opacity-100');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        };
+
+        function renderProjects(filter = 'All') {
+            const grid = document.getElementById('projects-grid');
+            grid.innerHTML = '';
+            projectData.forEach((p, idx) => {
+                if (filter !== 'All' && p.category !== filter) return;
+                const card = document.createElement('div');
+                card.className = 'reveal project-card rounded-[2.5rem] p-10 flex flex-col h-full opacity-0';
+                card.innerHTML = `
+                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 mb-8"><i data-lucide="${p.icon}" class="w-6 h-6"></i></div>
+                    <div class="flex-grow">
+                        <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-500/60 mb-3">${p.category}</h4>
+                        <h3 class="text-2xl font-black text-white mb-4 uppercase tracking-tight">${p.title}</h3>
+                        <p class="text-slate-400 leading-relaxed mb-10 text-sm body-text font-medium">${p.description}</p>
+                    </div>
+                    <button onclick="openModal(${idx})" class="w-full py-4 border border-white/10 hover:border-emerald-500 hover:text-emerald-400 transition-all font-black text-[10px] tracking-widest uppercase rounded-xl">Details</button>
+                `;
+                grid.appendChild(card);
+            });
+            lucide.createIcons();
+            gsap.to('.reveal', { y: 0, opacity: 1, duration: 1, stagger: 0.1, ease: 'power3.out' });
+        }
+
+        function renderSkills() {
+            const grid = document.getElementById('skills-grid');
+            skillData.forEach(cat => {
+                const div = document.createElement('div');
+                div.className = 'reveal model-card circuit-bg p-12 rounded-[2.5rem] hover:border-emerald-500/30 hover:shadow-[0_0_30px_rgba(16,185,129,0.1)] transition-all opacity-0';
+                div.innerHTML = `
+            <div class="flex justify-between items-start mb-10">
+                <div class="w-14 h-14 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 group">
+                    <i data-lucide="cpu" class="w-7 h-7 group-hover:rotate-90 transition-transform duration-700"></i>
+                </div>
+                <div class="flex gap-1">
+                    <div class="w-1.5 h-1.5 bg-emerald-500 rounded-full node-pulse"></div>
+                    <div class="w-1.5 h-1.5 bg-emerald-500/40 rounded-full node-pulse" style="animation-delay: 0.3s"></div>
+                    <div class="w-1.5 h-1.5 bg-emerald-500/20 rounded-full node-pulse" style="animation-delay: 0.6s"></div>
+                </div>
+            </div>
+            <h3 class="text-white text-lg font-black mb-8 uppercase tracking-widest">${cat.title}</h3>
+            <div class="space-y-6">
+                ${cat.skills.map(s => `
+                    <div class="group">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-slate-400 text-[10px] font-black uppercase tracking-widest group-hover:text-emerald-400 transition-colors">${s}</span>
+                            <span class="text-emerald-500 text-[9px] font-bold opacity-0 group-hover:opacity-100 transition-opacity uppercase">Optimized</span>
+                        </div>
+                        <div class="w-full h-[3px] bg-white/5 rounded-full overflow-hidden processing-bar">
+                            <div class="h-full bg-emerald-500/40 w-0 group-hover:w-[${Math.floor(Math.random() * 40 + 60)}%] transition-all duration-1000 ease-out"></div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+                grid.appendChild(div);
+            });
+
+            // CRITICAL: Re-initialize icons for the newly injected HTML
+            lucide.createIcons();
+        }
+
+        window.filterProjects = (category) => {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-emerald-500', 'text-black');
+                btn.classList.add('text-slate-500');
+                if (btn.innerText === category) { btn.classList.add('active', 'bg-emerald-500', 'text-black'); btn.classList.remove('text-slate-500'); }
+            });
+            renderProjects(category);
+        };
+
+        window.onload = () => {
+            lucide.createIcons();
+            initNeuralNet();
+            animateHeroIllustration();
+            renderProjects();
+            renderSkills();
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.from(".hero-text", { y: 60, opacity: 0, duration: 1.2, stagger: 0.2, ease: "power4.out" });
+            gsap.utils.toArray(".reveal").forEach((elem) => {
+                gsap.fromTo(elem, { y: 40, opacity: 0 }, { scrollTrigger: { trigger: elem, start: "top 90%", toggleActions: "play none none reverse" }, y: 0, opacity: 1, duration: 1, ease: "power3.out" });
+            });
+        };
+
+        // 1. The Super Tech Logic
+        function initSuperTech() {
+            // Digital Clock
+            const clock = document.getElementById('digital-clock');
+            const updateClock = () => {
+                const now = new Date();
+                clock.textContent = now.toLocaleTimeString('en-GB', {
+                    timeZone: 'Asia/Kolkata',
+                    hour12: false
+                });
+            };
+            setInterval(updateClock, 1000);
+            updateClock();
+
+            // Terminal Initialization Text
+            const initLines = [
+                "> Booting Reservoir_OS...",
+                "> Mounting Hydrogenic_Orbitals...",
+                "> Analyzing 3p/4d Dynamics...",
+                "> ESN Synchronization: 98.4%",
+                "> Status: Ready for Research."
+            ];
+
+            let lineIdx = 0;
+            const textTarget = document.getElementById('init-text');
+
+            function typeLine() {
+                if (lineIdx < initLines.length) {
+                    textTarget.innerHTML += initLines[lineIdx] + "<br/>";
+                    lineIdx++;
+                    gsap.to("#init-bar", { width: `${(lineIdx / initLines.length) * 100}%`, duration: 0.4 });
+                    setTimeout(typeLine, 800);
+                } else {
+                    setTimeout(() => {
+                        textTarget.innerHTML = "";
+                        lineIdx = 0;
+                        typeLine();
+                    }, 5000); // Reset after 5 seconds
+                }
+            }
+            typeLine();
+        }
+
+        // 2. The Main Initialization Flow
+        window.onload = () => {
+            // Initialize Lucide Icons first so the 'play' icon shows up
+            lucide.createIcons();
+
+            // Start the Neural Background and Hero Illustrations
+            initNeuralNet();
+            animateHeroIllustration();
+
+            // Render dynamic project/skill data
+            renderProjects();
+            renderSkills();
+
+            // START THE SUPER TECH ANIMATIONS
+            initSuperTech();
+
+            // GSAP Scroll Animations
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.from(".hero-text", { y: 60, opacity: 0, duration: 1.2, stagger: 0.2, ease: "power4.out" });
+
+            gsap.utils.toArray(".reveal").forEach((elem) => {
+                gsap.fromTo(elem, { y: 40, opacity: 0 }, {
+                    scrollTrigger: { trigger: elem, start: "top 90%", toggleActions: "play none none reverse" },
+                    y: 0, opacity: 1, duration: 1, ease: "power3.out"
+                });
+            });
+        };
+    </script>
+</body>
+
+</html>
